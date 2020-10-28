@@ -8,7 +8,7 @@
 
   Tweet.create(
     :text => "testtweet#{n+1}",
-    :iamge => "https://1.bp.blogspot.com/-noejtvMJM8Q/V4SA7f_DLbI/AAAAAAAA8OM/Ajwehtq2jCgO2QvPdxGJz5I290VyUZVLQCLcB/s800/dog_akitainu.png",
+    :image => "https://1.bp.blogspot.com/-noejtvMJM8Q/V4SA7f_DLbI/AAAAAAAA8OM/Ajwehtq2jCgO2QvPdxGJz5I290VyUZVLQCLcB/s800/dog_akitainu.png",
     :user_id => (n+1)
   )
 
