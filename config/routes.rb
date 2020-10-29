@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   root "tweets#index"
   devise_for :users
-  resources :users, only: :create
+  resources :users, only: :show
   resources :tweets do
-    resources :comments
+    resources :comments, only: :create
   end
 end
