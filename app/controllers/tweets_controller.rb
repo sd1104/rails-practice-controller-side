@@ -13,11 +13,12 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
     if @tweet.save
     else
-      reder :new
+      render :new
     end
   end
 
   def show
+    @comment = Comment.new
   end
 
   def edit
