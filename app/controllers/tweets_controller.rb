@@ -25,11 +25,18 @@ class TweetsController < ApplicationController
   end
 
   def update
-
+    if @tweet.update(tweet_params)
+    else
+      reder :edit
+    end
   end
 
   def destroy
-
+    if @tweet.destroy
+      redirect_to :index
+    else
+      render :index
+    end
   end
   private
   def tweet_params
