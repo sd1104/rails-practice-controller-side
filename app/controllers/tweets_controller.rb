@@ -1,5 +1,6 @@
 class TweetsController < ApplicationController
   def index
+    @tweet = Tweet.indlude(:user).order("created_ta DESC")
   end
 
   def new
