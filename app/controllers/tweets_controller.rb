@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :set_tweet_id, only: [:show, :edit, :destroy]
   def index
     @tweet = Tweet.indlude(:user).order("created_ta DESC")
   end
@@ -32,7 +33,9 @@ class TweetsController < ApplicationController
     params.require(:tweet).permit(:text, :image).merge(user_id: current_user)
   end
 
-
+  def set_tweet_id
+    @tweet = Tweet.find(paramas[:id])
+  end
 end
 
 
