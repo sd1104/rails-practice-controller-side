@@ -23,6 +23,10 @@ class TweetsController < ApplicationController
   end
 
   def update
+    if @tweet = Tweet.update(tweet_params)
+    else
+      render :edit
+    end
   end
 
   def destroy
