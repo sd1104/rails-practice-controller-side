@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :tweet_params, only: [:show, :edit, :destroy]
   def index
     @tweets = Tweet.includes(:user).order("created_at DESC")
   end
@@ -25,6 +26,15 @@ class TweetsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def set_tweet_id
+    @tweet = Tweet.find(params[:id])
+  end
+
+  def tweet_params
+    params.require(:tweet).permit(:text, :image).merge(user_id: current_user.id)
   end
 end
 
