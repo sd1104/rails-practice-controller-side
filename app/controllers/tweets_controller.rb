@@ -4,10 +4,15 @@ class TweetsController < ApplicationController
   end
 
   def new
-    @tweet = tweet.new
+    @tweet = Tweet.new
   end
 
   def create
+    @tweet = Tweet.new(tweet_params)
+    if @tweet.save
+    else
+      render :new
+    end
   end
 
   def show
