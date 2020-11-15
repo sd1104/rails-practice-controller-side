@@ -18,6 +18,7 @@ class TweetsController < ApplicationController
   end
 
   def show
+    @commnet = Commnet.new
   end
 
   def edit
