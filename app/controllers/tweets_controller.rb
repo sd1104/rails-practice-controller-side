@@ -8,7 +8,11 @@ class TweetsController < ApplicationController
   end
 
   def create
-
+    @tweet = Tweet.new(tweet_params)
+    if @tweet.save
+    else
+      render :new
+    end
   end
 
   def show
