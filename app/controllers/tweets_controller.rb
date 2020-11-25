@@ -32,6 +32,11 @@ class TweetsController < ApplicationController
   end
 
   def destroy
+    if @tweet.destroy
+      redirect_to root_path
+    else
+      render :index
+    end
   end
 
   private
